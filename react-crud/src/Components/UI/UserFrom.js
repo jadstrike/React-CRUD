@@ -2,6 +2,7 @@ import { Form, Input, Button } from "antd";
 import usersSlice from "../Redux/usersSlice";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Redux/usersSlice";
+import "./userform.css";
 
 const UserForm = () => {
   console.log(usersSlice);
