@@ -13,4 +13,5 @@ const dummydata = [
     phone: "555-555-5558",
   },
 ];
+
 export default dummydata;
