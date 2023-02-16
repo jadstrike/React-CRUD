@@ -1,12 +1,13 @@
+import MainContent from "./Components/UI/Content";
 import Footer from "./Components/UI/Footer";
 import Nav from "./Components/UI/Nav";
-import UserForm from "./Components/UI/UserFrom";
+
 
 const App = () => {
   return (
     <div>
       <Nav></Nav>
-      <UserForm></UserForm>
+      <MainContent />
       <Footer />
     </div>
   );
