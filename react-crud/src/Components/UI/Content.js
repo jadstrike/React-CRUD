@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+
 import { Layout, Card, Button } from "antd";
 import { deleteUser, updateUser } from "../../store/user-slice";
 import { message } from "antd";
@@ -49,7 +50,6 @@ const MainContent = () => {
             <p>Name: {user.name} </p>
             <p>Email: {user.email}</p>
             <p>Phone Numer: {user.phone}</p>
-
             <Button
               onClick={() => {
                 dispatch(deleteUser(user.id));
@@ -141,4 +141,5 @@ const MainContent = () => {
     </Layout>
   );
 };
+
 export default MainContent;

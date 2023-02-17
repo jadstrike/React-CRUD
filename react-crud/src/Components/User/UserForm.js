@@ -9,13 +9,13 @@ import { useState } from "react";
 const UserForm = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [success, setSuccess] = useState(false);
-  // console.log(usersSlice);
   const dispatch = useDispatch();
 
   const onFinish = (FormData) => {
     const id = new Date().getTime().toString();
     dispatch(addUser({ id, ...FormData }));
     setSuccess(true);
+    console.log(FormData);
 
     messageApi.open({
       type: "success",
