@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import updateUsers from "../Components/UI/Content";
 import dummydata from "../data";
 const userSlice = createSlice({
   name: "users",
@@ -14,5 +15,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { addUser, deleteUser } = userSlice.actions;
+export const { addUser, deleteUser, swapArrary } = userSlice.actions;
 export default userSlice;
