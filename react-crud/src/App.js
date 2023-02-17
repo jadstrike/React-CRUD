@@ -4,7 +4,6 @@ import Nav from "./Components/UI/Nav";
 import { Route, Switch } from "react-router-dom";
 import DragDrop from "./Components/UI/dragdrop";
 
-// import UserForm from "./Components/User/UserForm";
 
 const App = () => {
   return (
