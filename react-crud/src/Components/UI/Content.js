@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Layout, Card, Button } from "antd";
-import { deleteUser } from "../../store/user-slice";
+import { deleteUser, updateUser } from "../../store/user-slice";
 import { message } from "antd";
 import UserForm from "../User/UserForm";
 import { Input, Form, Modal } from "antd";
@@ -19,6 +19,15 @@ const MainContent = () => {
 
   const handleOk = () => {
     setIsModalOpen(false);
+  };
+  const update = (FormData) => {
+    console.log(FormData);
+    dispatch(updateUser({ ...FormData, id: selectedCardData.id }));
+    setIsModalOpen(false);
+    messageApi.open({
+      type: "success",
+      content: "User is updated",
+    });
   };
 
   const handleCancel = () => {
@@ -58,6 +67,7 @@ const MainContent = () => {
             <Button
               onClick={() =>
                 showModal({
+                  id: user.id,
                   name: user.name,
                   email: user.email,
                   phone: user.phone,
@@ -71,10 +81,11 @@ const MainContent = () => {
                 <Modal
                   title="Change user information"
                   open={isModalOpen}
+                  footer={null}
                   onOk={handleOk}
                   onCancel={handleCancel}
                 >
-                  <Form onFinish={handleOk}>
+                  <Form initialValues={selectedCardData} onFinish={update}>
                     <Form.Item
                       label="Name"
                       name="name"
@@ -86,7 +97,7 @@ const MainContent = () => {
                         },
                       ]}
                     >
-                      <Input placeholder={selectedCardData.name} />
+                      <Input />
                     </Form.Item>
 
                     <Form.Item
@@ -99,7 +110,7 @@ const MainContent = () => {
                         },
                       ]}
                     >
-                      <Input placeholder={selectedCardData.email} />
+                      <Input />
                     </Form.Item>
 
                     <Form.Item
@@ -112,7 +123,7 @@ const MainContent = () => {
                         },
                       ]}
                     >
-                      <Input placeholder={selectedCardData.phone} />
+                      <Input />
                     </Form.Item>
 
                     <Form.Item>
