@@ -9,7 +9,7 @@ import { useState } from "react";
 const UserForm = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [success, setSuccess] = useState(false);
-  console.log(usersSlice);
+  // console.log(usersSlice);
   const dispatch = useDispatch();
 
   const onFinish = (FormData) => {
